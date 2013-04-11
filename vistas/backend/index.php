@@ -1,7 +1,6 @@
 <?php
 
-if ( !isset($_SESSION['isLoged'])|| $_SESSION['isLoged']!=true ){
-	echo 'aki'; exit;
+if ( !isset($_SESSION['isLoged'])|| $_SESSION['isLoged']!=true ){	
 	header ('Location: /'.$_PETICION->modulo.'/user/login'); exit;
 }
 ?>
