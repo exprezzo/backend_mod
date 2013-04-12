@@ -3,6 +3,7 @@ require_once $APPS_PATH.$_PETICION->modulo.'/modelos/config_modelo.php';
 class config extends Controlador{
 	var $modelo="config";
 	var $campos=array('id','fk_user','tema');
+	var $pk="id";
 	
 	function nuevo(){		
 		$campos=$this->campos;

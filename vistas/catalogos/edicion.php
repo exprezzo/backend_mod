@@ -46,10 +46,16 @@
 		</div><div class="inputBox" style="margin-bottom:8px;display:block;margin-left:10px;width:100%;" autoFocus >
 			<label style="">modelo:</label>
 			<input type="text" name="modelo" class="txt_modelo" value="<?php echo $this->datos['modelo']; ?>" style="width:500px;" />
-		</div><div class="inputBox" style="margin-bottom:8px;display:block;margin-left:10px;width:100%;" autoFocus >
+		</div>
+		<div class="inputBox" style="margin-bottom:8px;display:block;margin-left:10px;width:100%;" autoFocus >
 			<label style="">tabla:</label>
 			<input type="text" name="tabla" class="txt_tabla" value="<?php echo $this->datos['tabla']; ?>" style="width:500px;" />
-		</div><div class="inputBox" style="margin-bottom:8px;display:block;margin-left:10px;width:100%;" autoFocus >
+		</div>
+		<div class="inputBox" style="margin-bottom:8px;display:block;margin-left:10px;width:100%;" autoFocus >
+			<label style="">P Key:</label>
+			<input type="text" name="pk_tabla" class="txt_pk_tabla" value="<?php echo $this->datos['pk_tabla']; ?>" style="width:500px;" />
+		</div>
+		<div class="inputBox" style="margin-bottom:8px;display:block;margin-left:10px;width:100%;" autoFocus >
 			<label style="">icono:</label>
 			<input type="text" name="icono" class="txt_icono" value="<?php echo $this->datos['icono']; ?>" style="width:500px;" />
 		</div><div class="inputBox" style="margin-bottom:8px;display:block;margin-left:10px;width:100%;" autoFocus >

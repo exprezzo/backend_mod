@@ -4,13 +4,13 @@ Navicat MySQL Data Transfer
 Source Server         : localhost_3306
 Source Server Version : 50508
 Source Host           : localhost:3306
-Source Database       : fastt
+Source Database       : mm
 
 Target Server Type    : MYSQL
 Target Server Version : 50508
 File Encoding         : 65001
 
-Date: 2013-04-10 20:18:08
+Date: 2013-04-12 12:50:59
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -29,6 +29,12 @@ CREATE TABLE `system_acl` (
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
+-- Records of system_acl
+-- ----------------------------
+INSERT INTO `system_acl` VALUES ('2', '0', 'asdf', 'asdf', 'asfd');
+INSERT INTO `system_acl` VALUES ('3', '2', '', '', '');
+
+-- ----------------------------
 -- Table structure for `system_catalogos`
 -- ----------------------------
 DROP TABLE IF EXISTS `system_catalogos`;
@@ -39,6 +45,7 @@ CREATE TABLE `system_catalogos` (
   `controlador` char(255) DEFAULT NULL,
   `modelo` char(255) DEFAULT NULL,
   `tabla` char(255) DEFAULT NULL,
+  `pk_tabla` char(255) DEFAULT 'id',
   `icono` char(255) DEFAULT NULL,
   `titulo_nuevo` char(255) DEFAULT NULL,
   `titulo_edicion` char(255) DEFAULT NULL,
@@ -49,16 +56,19 @@ CREATE TABLE `system_catalogos` (
   `msg_eliminado` char(255) DEFAULT NULL,
   `msg_cambios` char(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=40 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of system_catalogos
 -- ----------------------------
-INSERT INTO `system_catalogos` VALUES ('1', '1', 'Usuarios', 'usuarios', 'Usuario', 'system_users', 'http://png.findicons.com/files/icons/1620/crystal_project/64/personal.png', '', '', '', '', '', '', '', '');
-INSERT INTO `system_catalogos` VALUES ('2', '1', 'Configuracion', 'config', 'config', 'system_config', 'http://png.findicons.com/files/icons/2645/super_mono_3d/64/super_mono_3d_part2_65.png', '', '', '', '', '', '', '', '');
-INSERT INTO `system_catalogos` VALUES ('3', '1', 'Modulos', 'modulos', 'Modulo', 'system_modulos', 'http://png.findicons.com/files/icons/1681/siena/48/puzzle_yellow.png', '', '', '', '', '', '', '', '');
-INSERT INTO `system_catalogos` VALUES ('4', '1', 'Catalogos', 'catalogos', 'Catalogo', 'system_catalogos', 'http://png.findicons.com/files/icons/577/refresh_cl/48/windows_view_icon.png', '', '', '', '', '', '', '', '');
-INSERT INTO `system_catalogos` VALUES ('5', '1', 'seguridad', 'seguridad', 'Seguridad', 'system_acl', 'http://png.findicons.com/files/icons/1035/human_o2/48/keepassx.png', '', '', '', '', '', '', '', '');
+INSERT INTO `system_catalogos` VALUES ('18', '1', 'Usuarios', 'usuarios', 'Usuario', 'system_users', 'id', 'http://png.findicons.com/files/icons/1620/crystal_project/64/personal.png', '', '', '', '', '', '', '', '');
+INSERT INTO `system_catalogos` VALUES ('31', '1', 'Configuracion', 'config', 'config', 'system_config', 'id', 'http://png.findicons.com/files/icons/2645/super_mono_3d/64/super_mono_3d_part2_65.png', '', '', '', '', '', '', '', '');
+INSERT INTO `system_catalogos` VALUES ('32', '1', 'Modulos', 'modulos', 'Modulo', 'system_modulos', 'id', 'http://png.findicons.com/files/icons/1681/siena/48/puzzle_yellow.png', '', '', '', '', '', '', '', '');
+INSERT INTO `system_catalogos` VALUES ('33', '1', 'Catalogos', 'catalogos', 'Catalogo', 'system_catalogos', 'id', 'http://png.findicons.com/files/icons/577/refresh_cl/48/windows_view_icon.png', '', '', '', '', '', '', '', '');
+INSERT INTO `system_catalogos` VALUES ('36', '1', 'seguridad', 'seguridad', 'Seguridad', 'system_acl', 'id', 'http://png.findicons.com/files/icons/1035/human_o2/48/keepassx.png', '', '', '', '', '', '', '', '');
+INSERT INTO `system_catalogos` VALUES ('37', '2', 'paginas', 'paginas', 'pagina', 'cms_paginas', 'id', '', '', '', '', '', '', '', '', '');
+INSERT INTO `system_catalogos` VALUES ('38', '2', 'articulos', 'articulos', 'articulo', 'articulo', 'id', '', '', '', '', '', '', '', '', '');
+INSERT INTO `system_catalogos` VALUES ('39', '2', 'grupos', 'grupos', 'grupo', 'articulogru', 'id', '', '', '', '', '', '', '', '', '');
 
 -- ----------------------------
 -- Table structure for `system_config`
@@ -95,6 +105,8 @@ CREATE TABLE `system_modulos` (
 -- Records of system_modulos
 -- ----------------------------
 INSERT INTO `system_modulos` VALUES ('1', 'Sistema', 'http://png.findicons.com/files/icons/1681/siena/48/puzzle_yellow.png', 'backend', '/modulos/', null);
+INSERT INTO `system_modulos` VALUES ('2', 'Website Admin', 'http://png-1.findicons.com/files/icons/2003/business/64/shopping_full.png', 'portal', '/', '0');
+
 -- ----------------------------
 -- Table structure for `system_users`
 -- ----------------------------
@@ -117,5 +129,5 @@ CREATE TABLE `system_users` (
 -- ----------------------------
 -- Records of system_users
 -- ----------------------------
-INSERT INTO `system_users` VALUES ('1', 'zesar1', 0x1E398E80A894F4559B8CB0E74C8BEBBA, 'cbibriesca@hotmail.com', '2', '0', 'Zesar X', 'pic_1.jpg', 'retro_blue_background.jpg');
-INSERT INTO `system_users` VALUES ('20', 'luigi', 0xE827AED2E4FC02C926D52D7D2D598958, 'luigui@okcomputer.com', '1', '0', '', '', '');
+INSERT INTO `system_users` VALUES ('1', 'zesar1', 0x134EEE6BD8C053A00C0542DD114A1BEA, 'cbibriesca@hotmail.com', '2', '0', 'Zesar X', 'pic_1.jpg', 'retro_blue_background.jpg');
+INSERT INTO `system_users` VALUES ('20', 'luigi', 0x134EEE6BD8C053A00C0542DD114A1BEA, 'luigui@okcomputer.com', '1', '0', '', '', '');

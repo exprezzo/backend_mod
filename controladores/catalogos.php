@@ -13,7 +13,7 @@ include 'crear_catalogo/crear_editorjs.php';
 
 class catalogos extends Controlador{
 	var $modelo="Catalogo";
-	var $campos=array('id','fk_modulo','nombre','controlador','modelo','tabla','icono','titulo_nuevo','titulo_edicion','titulo_busqueda','msg_creado','msg_actualizado','pregunta_eliminar','msg_eliminado','msg_cambios');
+	var $campos=array('id','fk_modulo','nombre','controlador','modelo','tabla','pk_tabla','icono','titulo_nuevo','titulo_edicion','titulo_busqueda','msg_creado','msg_actualizado','pregunta_eliminar','msg_eliminado','msg_cambios');
 	
 	function nuevo(){		
 		$obj=array();
@@ -114,6 +114,7 @@ class catalogos extends Controlador{
 			'tabla'=>$_REQUEST['datos']['tabla'],
 			'modulo'=>$moduloObj['nombre_interno'],			
 			'ruta_base'=>$moduloObj['ruta_base'],
+			'pk_tabla'=>$_REQUEST['datos']['pk_tabla']
 		);
 		
 		// print_r( $res ); exit;
