@@ -18,7 +18,7 @@
 <form class="loginForm" action="/<?php echo $_PETICION->modulo; ?>/user/login" METHOD="POST" style="text-align:center">
 	<?
 	if  ( !empty($this->errores) ){
-		print_r ($this->errores);
+		// print_r ($this->errores);
 	}
 	?>
 	<h2>Login</h2>
