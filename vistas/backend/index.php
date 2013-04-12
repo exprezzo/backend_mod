@@ -12,8 +12,8 @@ if ( !isset($_SESSION['isLoged'])|| $_SESSION['isLoged']!=true ){
 	<!--jQuery References-->
 	
 	
-	<script src="/web/libs/jquery-1.8.3.js"></script>
-	<script src="/web/libs/jquery-ui-1.9.2.custom/jquery-ui-1.9.2.custom.js"></script>  
+	<script src="<?php echo $APP_URL_BASE; ?>web/libs/jquery-1.8.3.js"></script>
+	<script src="<?php echo $APP_URL_BASE; ?>web/libs/jquery-ui-1.9.2.custom/jquery-ui-1.9.2.custom.js"></script>  
 	
 	
 	<!--Theme-->
@@ -25,7 +25,7 @@ if ( !isset($_SESSION['isLoged'])|| $_SESSION['isLoged']!=true ){
 		$rutaTema=getUrlTema('artic');
 		$rutaTema=getUrlTema($APP_CONFIG['tema']);
 		
-		$rutaMod='/web/<?php echo $_PETICION->modulo; ?>/css/mods/black-tie/black-tie.css';
+		$rutaMod=$APP_URL_BASE.'web/<?php echo $_PETICION->modulo; ?>/css/mods/black-tie/black-tie.css';
 	?>
 	
 	
@@ -35,18 +35,18 @@ if ( !isset($_SESSION['isLoged'])|| $_SESSION['isLoged']!=true ){
 	
 	
 	<!--Wijmo Widgets CSS-->	
-	<link href="/web/libs/Wijmo.2.3.2/Wijmo-Complete/css/jquery.wijmo-complete.2.3.2.css" rel="stylesheet" type="text/css" />
-	<link href="/web/libs/Wijmo.2.3.2/Wijmo-Open/css/jquery.wijmo-open.2.3.2.css" rel="stylesheet" type="text/css" />			
+	<link href="<?php echo $APP_URL_BASE; ?>web/libs/Wijmo.2.3.2/Wijmo-Complete/css/jquery.wijmo-complete.2.3.2.css" rel="stylesheet" type="text/css" />
+	<link href="<?php echo $APP_URL_BASE; ?>web/libs/Wijmo.2.3.2/Wijmo-Open/css/jquery.wijmo-open.2.3.2.css" rel="stylesheet" type="text/css" />			
 	<!--link href="/css/themes/blitzer/jquery-ui-1.9.2.custom.css" rel="stylesheet"-->	
 	<!--Wijmo Widgets JavaScript-->
-	<script src="/web/libs/Wijmo.2.3.2/Wijmo-Complete/js/jquery.wijmo-complete.all.2.3.2.js" type="text/javascript"></script>
-	<script src="/web/libs/Wijmo.2.3.2/Wijmo-Open/js/jquery.wijmo-open.all.2.3.2.js" type="text/javascript"></script>		
+	<script src="<?php echo $APP_URL_BASE; ?>web/libs/Wijmo.2.3.2/Wijmo-Complete/js/jquery.wijmo-complete.all.2.3.2.js" type="text/javascript"></script>
+	<script src="<?php echo $APP_URL_BASE; ?>web/libs/Wijmo.2.3.2/Wijmo-Open/js/jquery.wijmo-open.all.2.3.2.js" type="text/javascript"></script>		
 	<!-- Gritter -->
-	<link href="/web/libs/Gritter-master/css/jquery.gritter.css" rel="stylesheet" type="text/css" />
-	<script src="/web/libs/Gritter-master/js/jquery.gritter.min.js" type="text/javascript"></script>
+	<link href="<?php echo $APP_URL_BASE; ?>web/libs/Gritter-master/css/jquery.gritter.css" rel="stylesheet" type="text/css" />
+	<script src="<?php echo $APP_URL_BASE; ?>web/libs/Gritter-master/js/jquery.gritter.min.js" type="text/javascript"></script>
 	
 	
-	<script src="/web/libs/shortcut.js"></script>  
+	<script src="<?php echo $APP_URL_BASE; ?>web/libs/shortcut.js"></script>  
 	
 	<link href="<?php echo $MOD_WEB_PATH; ?>css/estilos.css" rel="stylesheet" type="text/css" />	
 	<link href="<?php echo $_PETICION->modulo; ?>/backend/cssmenu" rel="stylesheet" type="text/css" />
@@ -61,6 +61,8 @@ if ( !isset($_SESSION['isLoged'])|| $_SESSION['isLoged']!=true ){
 			modulo:'<?php echo $_PETICION->modulo; ?>',
 			controlador:'<?php echo $_PETICION->controlador; ?>',
 			accion:'<?php echo $_PETICION->accion; ?>',
+			url_base:'<?php echo $APP_URL_BASE; ?>',
+			mod_url_base:'<?php echo $APP_URL_BASE.$_PETICION->modulo.'/'; ?>',
 			decimalPlacesMoney:2
 			// dafault:{
 				// modulo:
@@ -75,7 +77,7 @@ if ( !isset($_SESSION['isLoged'])|| $_SESSION['isLoged']!=true ){
 		$(function () {			
 			shortcut.add("Ctrl+Alt+C", 
 				function() { 
-					TabManager.add('/'+kore.modulo+'/catalogos/busqueda','Menu',0);
+					TabManager.add(kore.mod_url_base+'catalogos/busqueda','Menu',0);
 					
 				}, 
 				{ 'type':'keydown', 'propagate':false, 'target':document}
@@ -192,7 +194,7 @@ if ( !isset($_SESSION['isLoged'])|| $_SESSION['isLoged']!=true ){
 			// TabManager.add('/'+kore.modulo+'/orden_compra/index','Orden de Compra',1,'');			
 			// TabManager.add('/'+kore.modulo+'/pedidoi/verlista','Nuevo');			 
 			 // TabManager.add('/'+kore.modulo+'/catalogos/busqueda','Busqueda',0);
-			 TabManager.add('/'+kore.modulo+'/backend/menu','Menu',0,'tabMenu');
+			 TabManager.add(kore.mod_url_base+'backend/menu','Menu',0,'tabMenu');
 			
 			<?php 
 			
