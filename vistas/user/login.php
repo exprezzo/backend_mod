@@ -15,7 +15,7 @@
 	margin-top: -100px;
 }
 </style>
-<form class="loginForm" action="/<?php echo $_PETICION->modulo; ?>/user/login" METHOD="POST" style="text-align:center">
+<form class="loginForm" action="<?php echo $APP_URL_BASE.$_PETICION->modulo; ?>/user/login" METHOD="POST" style="text-align:center">
 	<?
 	if  ( !empty($this->errores) ){
 		print_r ($this->errores);
