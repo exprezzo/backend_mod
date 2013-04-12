@@ -55,7 +55,7 @@ class backend extends Controlador{
 				'limit'=>1000,
 				'filtros'=>$filtros				
 			);
-			$res=$catMod->buscar( $params );			
+			$res=$catMod->buscar( $params );				
 			$modulos[$i]['catalogos']=$res['datos'];			
 		}
 		$vista->modulos=$modulos;
