@@ -19,7 +19,7 @@
 	</ul>
 	<div id="<?php echo $domId; ?>" class="tbPedido">
 		<div style="vertical-align:top;"> 
-			<div  style="display:inline-block;margin-bottom:10px;">
+			<div  style="display:inline-block;">
 				<div title="Acciones" class="wijmo-wijribbon-dropdownbutton">					
 					<button title="Nuevo" class="" name="nuevo">
 							<span class="btnNuevo"></span>

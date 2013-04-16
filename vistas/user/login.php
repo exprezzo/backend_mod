@@ -24,7 +24,7 @@
 	<h2>Login</h2>
 	<input name="username" placeholder="nick">
 	<br>
-	<input name="pass" placeholder="pass">
+	<input type="password" name="pass" placeholder="pass">
 	<br>
 	<input type="submit">
 </form>
