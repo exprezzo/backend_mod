@@ -273,35 +273,15 @@ if ( !isset($_SESSION['isLoged'])|| $_SESSION['isLoged']!=true ){
 		#tabs > ul > li.ui-state-active{
 			background: #ffe475 url(images/ui-bg_inset-hard_100_ffe475_1x100.png) bottom repeat-x !important;
 		}
-	</style>
-	
+	</style>	
 </head>
 <body style="padding:0; margin:0;" class="" >	
-	<div id="splitter">
-		<div class="main_header">
-			<div style="padding:0px 0 0px 0px; float:left;position:relative;">
-				<a class="header_empresa ui-state-default" href="/index"><span style="margin:8px;"><?php echo $APP_CONFIG['nombre']; ?></span></a>
-			</div>	
-					
-			<div class="user_widget" >
-				<a class ="left ui-state-default" href="/<?php echo $_PETICION->modulo; ?>/user/perfil" tablink="true">Perfil</a>
-				<a class ="right ui-state-default" href="/<?php echo $_PETICION->modulo; ?>/user/logout" tablink="false">Salir</a>
-			</div>						
-			
-			 <?php // $this->mostrar('general/accesos_directos'); ?>
-		</div>
+	
 		<div id="tabs">
 			 <ul>			
 			</ul>		
 		</div>	
 		
-		<div class="ui-state-default link-salir" style="position:absolute;right:0;top:0;height:29px;"><a onclick="salir()" href="#" >Salir</a></div>
-		
-	</div>
-	
-	
-
-	 
+		<div class="ui-state-default link-salir" style=""><a onclick="salir()" href="#" >Salir</a></div>			
 </body>
 </html>
-

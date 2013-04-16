@@ -44,11 +44,15 @@
 	float: left;
 	padding: 10px;
 }
-
+.menuTabs{
+	margin:5px;
+}
 .menuTabs  ul.ui-tabs-nav{
 	width:auto !important;
 	min-height:auto !important;
+	
 }
+
 </style>
 <div class="menu_page_header">
 <h1 style="display:inline-block;"><?php echo $APP_CONFIG['nombre']; ?></h1>

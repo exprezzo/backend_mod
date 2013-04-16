@@ -15,7 +15,8 @@
 			},
 			catalogo:{
 				nombre:'config'
-			}
+			},			
+			pk:"id"
 			
 		};				
 		 var editor=new Edicionconfig();
@@ -26,15 +27,17 @@
 	<div class="pnlIzq">
 		<?php 	
 			global $_PETICION;
-			$this->mostrar('/componentes/toolbar');	
+			$this->mostrar('/backend/componentes/toolbar');	
 			if (!isset($this->datos)){		
 				$this->datos=array();		
 			}
 		?>
 		
-		<form class="frmEdicion" style="padding-top:10px;">	
-			<input type="hidden" name="id" class="txtId" value="<?php echo $this->datos['id']; ?>" />	
+		<form class="frmEdicion" style="padding-top:10px;">				
 			<div class="inputBox" style="margin-bottom:8px;display:block;margin-left:10px;width:100%;" autoFocus >
+			<label style="">id:</label>
+			<input type="text" name="id" class="txt_id" value="<?php echo $this->datos['id']; ?>" style="width:500px;" />
+		</div><div class="inputBox" style="margin-bottom:8px;display:block;margin-left:10px;width:100%;" autoFocus >
 			<label style="">fk_user:</label>
 			<input type="text" name="fk_user" class="txt_fk_user" value="<?php echo $this->datos['fk_user']; ?>" style="width:500px;" />
 		</div><div class="inputBox" style="margin-bottom:8px;display:block;margin-left:10px;width:100%;" autoFocus >

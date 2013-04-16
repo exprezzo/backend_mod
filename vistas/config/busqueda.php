@@ -15,7 +15,8 @@
 			},
 			catalogo:{
 				nombre:'config'
-			}
+			},			
+			pk:"id"
 			
 		};				
 		 var lista=new Busquedaconfig();
@@ -24,7 +25,7 @@
 </script>
 <?php 	
 	global $_PETICION;
-	$this->mostrar('/componentes/busqueda_toolbar');
+	$this->mostrar('/backend/componentes/busqueda_toolbar');
 ?>
 <div >	
 	<table class="grid_busqueda">

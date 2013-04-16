@@ -2,6 +2,7 @@
 class configModelo extends Modelo{
 	var $tabla="system_config";
 	var $campos=array('id','fk_user','tema');
+	var $pk="id";
 	
 	function nuevo($params){
 		return parent::nuevo($params);
