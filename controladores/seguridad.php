@@ -1,5 +1,5 @@
 <?php
-require_once $APPS_PATH.$_PETICION->modulo.'/modelos/Seguridad_modelo.php';
+require_once $APPS_PATH.$_PETICION->modulo.'/modelos/seguridad_modelo.php';
 class seguridad extends Controlador{
 	var $modelo="Seguridad";
 	var $campos=array('id','fk_user','controlador','modulo','accion');

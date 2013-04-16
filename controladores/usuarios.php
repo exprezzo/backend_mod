@@ -1,5 +1,5 @@
 <?php
-require_once $APPS_PATH.$_PETICION->modulo.'/modelos/Usuario_modelo.php';
+require_once $APPS_PATH.$_PETICION->modulo.'/modelos/usuario_modelo.php';
 class usuarios extends Controlador{
 	var $modelo="Usuario";
 	var $campos=array('id','nick','pass','email','rol','fbid','name','picture','originalName');
