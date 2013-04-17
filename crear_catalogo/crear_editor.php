@@ -17,7 +17,7 @@ function crear_editor($params){
 		// if ($campos[$i]=='id') continue;
 		
 		$divs.=
-		'<div class="inputBox" style="margin-bottom:8px;display:block;margin-left:10px;width:100%;" autoFocus >
+		'<div class="inputBox" style="margin-bottom:8px;display:block;margin-left:10px;width:100%;"  >
 			<label style="">'.ucwords(strtolower($campos[$i])) .':</label>
 			<input type="text" name="'.$campos[$i].'" class="txt_'.$campos[$i].'" value="<?php echo $this->datos[\''.$campos[$i].'\']; ?>" style="width:500px;" />
 		</div>';
