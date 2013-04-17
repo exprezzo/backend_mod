@@ -32,31 +32,31 @@
 			}
 		?>
 		
-		<form class="frmEdicion" style="padding-top:10px;">	
-			<input type="hidden" name="id" class="txtId" value="<?php echo $this->datos['id']; ?>" />	
-			<div class="inputBox" style="margin-bottom:8px;display:block;margin-left:10px;width:100%;" autoFocus >
-			<label style="">nick:</label>
+		<form class="frmEdicion" style="padding-top:10px;">							
+			<input type="hidden" name="id" class="txt_id" value="<?php echo $this->datos['id']; ?>" style="width:500px;" />
+		<div class="inputBox" style="margin-bottom:8px;display:block;margin-left:10px;width:100%;" autoFocus >
+			<label style="">Nick:</label>
 			<input type="text" name="nick" class="txt_nick" value="<?php echo $this->datos['nick']; ?>" style="width:500px;" />
 		</div><div class="inputBox" style="margin-bottom:8px;display:block;margin-left:10px;width:100%;" autoFocus >
-			<label style="">pass:</label>
-			<input type="text" name="pass" class="txt_pass" value="<?php echo $this->datos['pass']; ?>" style="width:500px;" />
+			<label style="">Pass:</label>
+			<input type="password" name="pass" class="txt_pass" value="<?php echo $this->datos['pass']; ?>" style="width:500px;" />
 		</div><div class="inputBox" style="margin-bottom:8px;display:block;margin-left:10px;width:100%;" autoFocus >
-			<label style="">email:</label>
+			<label style="">Email:</label>
 			<input type="text" name="email" class="txt_email" value="<?php echo $this->datos['email']; ?>" style="width:500px;" />
 		</div><div class="inputBox" style="margin-bottom:8px;display:block;margin-left:10px;width:100%;" autoFocus >
-			<label style="">rol:</label>
+			<label style="">Rol:</label>
 			<input type="text" name="rol" class="txt_rol" value="<?php echo $this->datos['rol']; ?>" style="width:500px;" />
 		</div><div class="inputBox" style="margin-bottom:8px;display:block;margin-left:10px;width:100%;" autoFocus >
-			<label style="">fbid:</label>
+			<label style="">Fbid:</label>
 			<input type="text" name="fbid" class="txt_fbid" value="<?php echo $this->datos['fbid']; ?>" style="width:500px;" />
 		</div><div class="inputBox" style="margin-bottom:8px;display:block;margin-left:10px;width:100%;" autoFocus >
-			<label style="">name:</label>
+			<label style="">Name:</label>
 			<input type="text" name="name" class="txt_name" value="<?php echo $this->datos['name']; ?>" style="width:500px;" />
 		</div><div class="inputBox" style="margin-bottom:8px;display:block;margin-left:10px;width:100%;" autoFocus >
-			<label style="">picture:</label>
+			<label style="">Picture:</label>
 			<input type="text" name="picture" class="txt_picture" value="<?php echo $this->datos['picture']; ?>" style="width:500px;" />
 		</div><div class="inputBox" style="margin-bottom:8px;display:block;margin-left:10px;width:100%;" autoFocus >
-			<label style="">originalName:</label>
+			<label style="">Originalname:</label>
 			<input type="text" name="originalName" class="txt_originalName" value="<?php echo $this->datos['originalName']; ?>" style="width:500px;" />
 		</div>
 		</form>
