@@ -15,7 +15,9 @@
 			},
 			catalogo:{
 				nombre:'Usuario'
-			}
+
+			},			
+			pk:"id"
 			
 		};				
 		 var lista=new Busquedausuarios();
@@ -24,7 +26,7 @@
 </script>
 <?php 	
 	global $_PETICION;
-	$this->mostrar('/componentes/busqueda_toolbar');
+	$this->mostrar('/backend/componentes/busqueda_toolbar');
 ?>
 <div >	
 	<table class="grid_busqueda">

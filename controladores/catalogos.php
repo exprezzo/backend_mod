@@ -2,13 +2,13 @@
 require_once $APPS_PATH.$_PETICION->modulo.'/modelos/catalogo_modelo.php';
 require_once $APPS_PATH.$_PETICION->modulo.'/modelos/modulo_modelo.php';
 
-include 'crear_catalogo/crear_controlador.php';
-include 'crear_catalogo/crear_modelo.php';
-include 'crear_catalogo/crear_vistas.php';
-include 'crear_catalogo/crear_buscador.php';
-include 'crear_catalogo/crear_buscadorjs.php';
-include 'crear_catalogo/crear_editor.php';
-include 'crear_catalogo/crear_editorjs.php';
+include $APPS_PATH.$_PETICION->modulo.'/crear_catalogo/crear_controlador.php';
+include $APPS_PATH.$_PETICION->modulo.'/crear_catalogo/crear_modelo.php';
+include $APPS_PATH.$_PETICION->modulo.'/crear_catalogo/crear_vistas.php';
+include $APPS_PATH.$_PETICION->modulo.'/crear_catalogo/crear_buscador.php';
+include $APPS_PATH.$_PETICION->modulo.'/crear_catalogo/crear_buscadorjs.php';
+include $APPS_PATH.$_PETICION->modulo.'/crear_catalogo/crear_editor.php';
+include $APPS_PATH.$_PETICION->modulo.'/crear_catalogo/crear_editorjs.php';
 
 
 class catalogos extends Controlador{

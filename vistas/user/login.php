@@ -6,7 +6,7 @@
 	webkit-box-shadow: 7px 7px 5px rgba(50, 50, 50, 0.75);-moz-box-shadow:    7px 7px 5px rgba(50, 50, 50, 0.75);box-shadow: 7px 7px 5px rgba(50, 50, 50, 0.75);
 	
 	
-	height: 152px;
+	height: 184px;
 	width: 158px;
 	left: 50%;
 	margin-left: -90px;
@@ -24,7 +24,9 @@
 	<h2>Login</h2>
 	<input name="username" placeholder="nick">
 	<br>
+	<br>
 	<input type="password" name="pass" placeholder="pass">
+	<br>
 	<br>
 	<input type="submit">
 </form>
