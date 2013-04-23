@@ -24,6 +24,8 @@ require_once $APPS_PATH.$_PETICION->modulo.\'/modelos/'.$nombreModelo.'_modelo.p
 class '.$nombreControlador.' extends Controlador{
 	var $modelo="'.$nombreModelo.'";
 	var $campos='.$fieldsStr.';
+	var $pk="'.$params['pk_tabla'].'";
+	var $nombre="'.strtolower($nombreControlador).'";
 	
 	function nuevo(){		
 		$campos=$this->campos;

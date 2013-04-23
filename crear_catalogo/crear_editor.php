@@ -16,11 +16,11 @@ function crear_editor($params){
 	for($i=0; $i<sizeof($campos); $i++ ){
 		// if ($campos[$i]=='id') continue;
 		
-		$divs.=
-		'<div class="inputBox" style="margin-bottom:8px;display:block;margin-left:10px;width:100%;"  >
-			<label style="">'.ucwords(strtolower($campos[$i])) .':</label>
-			<input type="text" name="'.$campos[$i].'" class="txt_'.$campos[$i].'" value="<?php echo $this->datos[\''.$campos[$i].'\']; ?>" style="width:500px;" />
-		</div>';
+$divs.=
+'<div class="inputBox" style="margin-bottom:8px;display:block;margin-left:10px;width:100%;"  >
+	<label style="">'.ucwords(strtolower($campos[$i])) .':</label>
+	<input type="text" name="'.$campos[$i].'" class="txt_'.$campos[$i].'" value="<?php echo $this->datos[\''.$campos[$i].'\']; ?>" style="width:500px;" />
+</div>'.PHP_EOL;
 	}
 $contenido='
 <script src="<?php echo $MOD_WEB_PATH; ?>js/catalogos/<?php echo $_PETICION->controlador; ?>/edicion.js"></script>
@@ -51,7 +51,7 @@ $contenido='
 	<div class="pnlIzq">
 		<?php 	
 			global $_PETICION;
-			$this->mostrar(\'/componentes/toolbar\');	
+			$this->mostrar(\'/backend/componentes/toolbar\');	
 			if (!isset($this->datos)){		
 				$this->datos=array();		
 			}
