@@ -5,6 +5,8 @@ function crear_modelo($params){
 	$fields=$params['fields'];
 	$tabla=$params['tabla'];
 	
+	// print_r($params); exit;
+	
 	global $_PETICION;
 	// $ruta='../'.$_PETICION->modulo.'/modelos/';	
 	$ruta='../'.$params['ruta_base'].$params['modulo'].'/modelos/';	
@@ -24,6 +26,7 @@ $contenido='<?php
 class '.$nombreModelo.'Modelo extends Modelo{
 	var $tabla="'.$tabla.'";
 	var $campos='.$fieldsStr.';
+	var $pk="'.$params['pk_tabla'].'";
 	
 	function nuevo($params){
 		return parent::nuevo($params);
