@@ -14,14 +14,28 @@ class backend extends Controlador{
 		$vista->catalogos=$res['datos'];		
 		return $vista->mostrar( );
 	}
-	function cssmenu(){
-		header("Content-type: text/css");
+	function inicio($vistaFile=''){
+		$vista= $this->getVista();
 		$catMod = new CatalogoModelo();
 		$params=array(
 			'start'=>0,
 			'limit'=>1000
 		);
 		$res=$catMod->buscar( $params );
+		$vista->catalogos=$res['datos'];		
+		return $vista->mostrar( );
+	}
+	function cssmenu(){
+	
+		 header("Content-type: text/css");
+		$catMod = new CatalogoModelo();
+		$params=array(
+			'start'=>0,
+			'limit'=>1000
+		);
+		$res=$catMod->buscar( $params );
+		
+		// print_r($res); 
 		foreach($res['datos'] as $cat){
 			echo 'ul.ui-tabs-nav li a.tab_'.$cat['controlador'].'{ background-image:url("'.$cat['icono'].'"); } ';
 		}

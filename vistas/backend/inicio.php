@@ -51,7 +51,7 @@ if ( !isset($_SESSION['isLoged'])|| $_SESSION['isLoged']!=true ){
 	<script src="<?php echo $MOD_WEB_PATH; ?>/libs/shortcut.js"></script>  
 	
 	<link href="<?php echo $MOD_WEB_PATH; ?>css/estilos.css" rel="stylesheet" type="text/css" />	
-	<link href="<?php echo $_PETICION->modulo; ?>/backend/cssmenu" rel="stylesheet" type="text/css" />
+	<link href="/<?php echo $_PETICION->modulo; ?>/backend/cssmenu" rel="stylesheet" type="text/css" />
 	
 	<script src="<?php echo $MOD_WEB_PATH; ?>js/funciones.js" type="text/javascript"></script>
 	<script src="<?php echo $MOD_WEB_PATH; ?>js/TabManager.js" type="text/javascript"></script>
