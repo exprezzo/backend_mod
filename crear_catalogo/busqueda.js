@@ -11,7 +11,7 @@
 	
 	$.ajax({
 			type: "POST",
-			url: '/'+this.configuracion.modulo.nombre+'/'+this.controlador.nombre+'/eliminar',
+			url: kore.url_base+this.configuracion.modulo.nombre+'/'+this.controlador.nombre+'/eliminar',
 
 			data: params
 		}).done(function( response ) {		
@@ -40,7 +40,7 @@
 		});
 }
 	this.nuevo=function(){		
-		TabManager.add('/'+this.configuracion.modulo.nombre+'/'+this.controlador.nombre+'/nuevo',this.tituloNuevo);
+		TabManager.add(kore.url_base+this.configuracion.modulo.nombre+'/'+this.controlador.nombre+'/nuevo',this.tituloNuevo);
 	};
 	this.activate=function(){
 		// vuelve a renderear estos elementos que presentaban problemas. (correccion de bug)		
@@ -97,7 +97,7 @@
 					case 'editar':
 						if (me.selected!=undefined){													
 							var id=me.selected[me.configuracion.pk];							
-							TabManager.add('/'+me.configuracion.modulo.nombre+'/'+me.controlador.nombre+'/editar','Editar '+me.catalogo.nombre,id);
+							TabManager.add(kore.url_base+me.configuracion.modulo.nombre+'/'+me.controlador.nombre+'/editar','Editar '+me.catalogo.nombre,id);
 						}
 					break;
 					case 'eliminar':
@@ -142,7 +142,7 @@
 			
 		var dataSource = new wijdatasource({
 			proxy: new wijhttpproxy({
-				url: '/'+this.configuracion.modulo.nombre+'/'+this.controlador.nombre+'/buscar',
+				url: kore.url_base+this.configuracion.modulo.nombre+'/'+this.controlador.nombre+'/buscar',
 				dataType: "json"
 			}),
 			dynamic:true,
@@ -185,7 +185,7 @@
 		gridBusqueda.wijgrid({ loaded: function (e) { 
 			$(me.tabId + ' .grid_busqueda tr').bind('dblclick', function (e) { 							
 				var pedidoId=me.selected[me.configuracion.pk];
-				TabManager.add('/'+me.configuracion.modulo.nombre+'/'+me.controlador.nombre+'/editar','Editar '+me.catalogo.nombre,pedidoId);				
+				TabManager.add(kore.url_base+me.configuracion.modulo.nombre+'/'+me.controlador.nombre+'/editar','Editar '+me.catalogo.nombre,pedidoId);				
 			});			
 		} });
 	};

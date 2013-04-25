@@ -14,6 +14,8 @@ include $APPS_PATH.$_PETICION->modulo.'/crear_catalogo/crear_editorjs.php';
 class catalogos extends Controlador{
 	var $modelo="Catalogo";
 	var $campos=array('id','fk_modulo','nombre','controlador','modelo','tabla','pk_tabla','icono','titulo_nuevo','titulo_edicion','titulo_busqueda','msg_creado','msg_actualizado','pregunta_eliminar','msg_eliminado','msg_cambios');
+	var $pk="id";
+	var $nombre="catalogos2";
 	
 	function nuevo(){		
 		$obj=array();

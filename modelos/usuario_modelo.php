@@ -3,6 +3,12 @@ class UsuarioModelo extends Modelo{
 	var $tabla="system_users";
 	var $campos=array('id','nick','pass','email','rol','fbid','name','picture','originalName');
 	
+	function logout(){
+		unset($_SESSION['isLoged']);
+		unset($_SESSION['userInfo']);	
+		unset($_SESSION['logoutUrl']);		
+	}
+	
 	function nuevo($params){
 		return parent::nuevo($params);
 	}

@@ -1,7 +1,4 @@
 <?php
-
-
-
 if ( !isset($_SESSION['isLoged'])|| $_SESSION['isLoged']!=true ){	
 	header ('Location: '.$APP_PATH.$_PETICION->modulo.'/user/login'); exit;
 }
@@ -14,8 +11,8 @@ if ( !isset($_SESSION['isLoged'])|| $_SESSION['isLoged']!=true ){
 	<!--jQuery References-->
 	
 	
-	<script src="<?php echo $MOD_WEB_PATH; ?>/libs/jquery-1.8.3.js"></script>
-	<script src="<?php echo $MOD_WEB_PATH; ?>/libs/jquery-ui-1.9.2.custom/jquery-ui-1.9.2.custom.js"></script>  
+	<script src="<?php echo $_APP_PATH; ?>web/libs/jquery-1.8.3.js"></script>
+	<script src="<?php echo $_APP_PATH; ?>web/libs/jquery-ui-1.9.2.custom/jquery-ui-1.9.2.custom.js"></script>  
 	
 	
 	<!--Theme-->
@@ -37,21 +34,21 @@ if ( !isset($_SESSION['isLoged'])|| $_SESSION['isLoged']!=true ){
 	
 	
 	<!--Wijmo Widgets CSS-->	
-	<link href="<?php echo $MOD_WEB_PATH; ?>/libs/Wijmo.2.3.2/Wijmo-Complete/css/jquery.wijmo-complete.2.3.2.css" rel="stylesheet" type="text/css" />
-	<link href="<?php echo $MOD_WEB_PATH; ?>/libs/Wijmo.2.3.2/Wijmo-Open/css/jquery.wijmo-open.2.3.2.css" rel="stylesheet" type="text/css" />			
+	<link href="<?php echo $_APP_PATH; ?>web/libs/Wijmo.2.3.2/Wijmo-Complete/css/jquery.wijmo-complete.2.3.2.css" rel="stylesheet" type="text/css" />
+	<link href="<?php echo $_APP_PATH; ?>web/libs/Wijmo.2.3.2/Wijmo-Open/css/jquery.wijmo-open.2.3.2.css" rel="stylesheet" type="text/css" />			
 	<!--link href="/css/themes/blitzer/jquery-ui-1.9.2.custom.css" rel="stylesheet"-->	
 	<!--Wijmo Widgets JavaScript-->
-	<script src="<?php echo $MOD_WEB_PATH; ?>/libs/Wijmo.2.3.2/Wijmo-Complete/js/jquery.wijmo-complete.all.2.3.2.js" type="text/javascript"></script>
-	<script src="<?php echo $MOD_WEB_PATH; ?>/libs/Wijmo.2.3.2/Wijmo-Open/js/jquery.wijmo-open.all.2.3.2.js" type="text/javascript"></script>		
+	<script src="<?php echo $_APP_PATH; ?>web/libs/Wijmo.2.3.2/Wijmo-Complete/js/jquery.wijmo-complete.all.2.3.2.js" type="text/javascript"></script>
+	<script src="<?php echo $_APP_PATH; ?>web/libs/Wijmo.2.3.2/Wijmo-Open/js/jquery.wijmo-open.all.2.3.2.js" type="text/javascript"></script>		
 	<!-- Gritter -->
-	<link href="<?php echo $MOD_WEB_PATH; ?>/libs/Gritter-master/css/jquery.gritter.css" rel="stylesheet" type="text/css" />
-	<script src="<?php echo $MOD_WEB_PATH; ?>/libs/Gritter-master/js/jquery.gritter.min.js" type="text/javascript"></script>
+	<link href="<?php echo $_APP_PATH; ?>web/libs/Gritter-master/css/jquery.gritter.css" rel="stylesheet" type="text/css" />
+	<script src="<?php echo $_APP_PATH; ?>web/libs/Gritter-master/js/jquery.gritter.min.js" type="text/javascript"></script>
 	
 	
-	<script src="<?php echo $MOD_WEB_PATH; ?>/libs/shortcut.js"></script>  
+	<script src="<?php echo $_APP_PATH; ?>web/libs/shortcut.js"></script>  
 	
 	<link href="<?php echo $MOD_WEB_PATH; ?>css/estilos.css" rel="stylesheet" type="text/css" />	
-	<link href="/<?php echo $_PETICION->modulo; ?>/backend/cssmenu" rel="stylesheet" type="text/css" />
+	<link href="<?php echo $_APP_PATH.$_PETICION->modulo; ?>/backend/cssmenu" rel="stylesheet" type="text/css" />
 	
 	<script src="<?php echo $MOD_WEB_PATH; ?>js/funciones.js" type="text/javascript"></script>
 	<script src="<?php echo $MOD_WEB_PATH; ?>js/TabManager.js" type="text/javascript"></script>
@@ -73,11 +70,11 @@ if ( !isset($_SESSION['isLoged'])|| $_SESSION['isLoged']!=true ){
 			// }			
 		};
 		
-		salir=function(){
-		
-			window.location='<? echo $APP_PATH ?>'+kore.modulo+'/user/logout';
+		salir=function(){		
+			window.location=kore.mod_url_base+'usuarios/logout';
 		}
 		$(function () {
+		
 			shortcut.add("Ctrl+Alt+C", 
 				function() { 
 					TabManager.add(kore.mod_url_base+'catalogos/busqueda','Menu',0);
@@ -88,7 +85,7 @@ if ( !isset($_SESSION['isLoged'])|| $_SESSION['isLoged']!=true ){
 			
 			shortcut.add("Ctrl+Alt+M", 
 				function() { 
-					TabManager.add('/'+kore.modulo+'/backend/menu','Menu');
+					TabManager.add(kore.mod_url_base+'/backend/menu','Menu');
 					
 				}, 
 				{ 'type':'keydown', 'propagate':false, 'target':document}
@@ -118,19 +115,7 @@ if ( !isset($_SESSION['isLoged'])|| $_SESSION['isLoged']!=true ){
 				{ 'type':'keydown', 'propagate':false, 'target':document} 
 			);  
 			
-			shortcut.add("Ctrl+Alt+P", 
-				function() { 
-					 TabManager.add('/'+kore.modulo+'/pedidoi/verlista','Busqueda');
-				}, 
-				{ 'type':'keydown', 'propagate':false, 'target':document} 
-			); 
 			
-			shortcut.add("Ctrl+Alt+O", 
-				function() { 
-					 TabManager.add('/'+kore.modulo+'/orden_compra/index','Busqueda',1);
-				}, 
-				{ 'type':'keydown', 'propagate':false, 'target':document} 
-			); 
 			
 			shortcut.add("Ctrl+Alt+W", 
 				function() { 
@@ -198,6 +183,7 @@ if ( !isset($_SESSION['isLoged'])|| $_SESSION['isLoged']!=true ){
 			// TabManager.add('/'+kore.modulo+'/pedidoi/verlista','Nuevo');			 
 			 // TabManager.add('/'+kore.modulo+'/catalogos/busqueda','Busqueda',0);
 			 TabManager.add(kore.mod_url_base+'backend/menu','Menu',0,'tabMenu');
+			
 			
 			<?php 
 			

@@ -15,7 +15,8 @@
 			},
 			catalogo:{
 				nombre:'Catalogo'
-			}
+			},			
+			pk:"id"
 			
 		};				
 		 var editor=new Edicioncatalogos();
@@ -26,7 +27,7 @@
 	<div class="pnlIzq">
 		<?php 	
 			global $_PETICION;
-			$this->mostrar('/componentes/toolbar');	
+			$this->mostrar('/backend/componentes/toolbar');	
 			if (!isset($this->datos)){		
 				$this->datos=array();		
 			}

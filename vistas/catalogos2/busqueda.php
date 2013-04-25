@@ -14,13 +14,13 @@
 				nombre:'<?php echo $_PETICION->modulo; ?>'
 			},
 			catalogo:{
-				nombre:'Catalogo'
+				nombre:'Catalogo2'
+
 			},			
 			pk:"id"
 			
-			
 		};				
-		 var lista=new Busquedacatalogos();
+		 var lista=new Busquedacatalogos2();
 		 lista.init(config);		
 	});
 </script>

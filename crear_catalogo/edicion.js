@@ -133,7 +133,7 @@
 		
 		$.ajax({
 			type: "POST",
-			url: '/'+this.configuracion.modulo.nombre+'/'+this.controlador.nombre+'/guardar',
+			url: kore.url_base+this.configuracion.modulo.nombre+'/'+this.controlador.nombre+'/guardar',
 			data: { datos: datos}
 		}).done(function( response ) {
 			
@@ -143,9 +143,9 @@
 			
 			if ( resp.success == true	){
 				if (resp.msgType!=undefined && resp.msgType == 'info'){
-					icon='/web/'+kore.modulo+'/images/yes.png';
+					icon=kore.url_base+'web/'+kore.modulo+'/images/yes.png';
 				}else{
-					icon='/web/'+kore.modulo+'/images/info.png';
+					icon=kore.url_base+'web/'+kore.modulo+'/images/info.png';
 				}
 				
 				title= 'Success';				
@@ -177,7 +177,7 @@
 					}
 				}
 			}else{
-				icon= '/web/'+kore.modulo+'/images/error.png';
+				icon= kore.url_base+'web/'+kore.modulo+'/images/error.png';
 				title= 'Error';					
 				$.gritter.add({
 					position: 'bottom-left',
@@ -203,7 +203,7 @@
 		
 		$.ajax({
 				type: "POST",
-				url: '/'+me.configuracion.modulo.nombre+'/'+me.controlador.nombre+'/eliminar',
+				url: kore.url_base+me.configuracion.modulo.nombre+'/'+me.controlador.nombre+'/eliminar',
 
 				data: params
 			}).done(function( response ) {		
@@ -211,10 +211,10 @@
 				var msg= (resp.msg)? resp.msg : '';
 				var title;
 				if ( resp.success == true	){					
-					icon='/web/'+kore.modulo+'/images/yes.png';
+					icon=kore.url_base+'web/'+kore.modulo+'/images/yes.png';
 					title= 'Success';									
 				}else{
-					icon= '/web/'+kore.modulo+'/images/error.png';
+					icon= kore.url_base+'web/'+kore.modulo+'/images/error.png';
 					title= 'Error';
 				}
 				

@@ -4,6 +4,15 @@ class usuarios extends Controlador{
 	var $modelo="Usuario";
 	var $campos=array('id','nick','pass','email','rol','fbid','name','picture','originalName');
 	
+	function logout(){	
+		// ob_start();
+		$model=$this->getModel();		
+		$model->logout();
+		// ob_end_clean();
+		global $APP_PATH;
+		header ('Location: '.$APP_PATH);
+	}
+	
 	function nuevo(){		
 		$campos=$this->campos;
 		$vista=$this->getVista();				

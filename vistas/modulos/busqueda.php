@@ -15,7 +15,9 @@
 			},
 			catalogo:{
 				nombre:'Modulo'
-			}
+
+			},			
+			pk:"id"
 			
 		};				
 		 var lista=new Busquedamodulos();
@@ -24,7 +26,7 @@
 </script>
 <?php 	
 	global $_PETICION;
-	$this->mostrar('/componentes/busqueda_toolbar');
+	$this->mostrar('/backend/componentes/busqueda_toolbar');
 ?>
 <div >	
 	<table class="grid_busqueda">
@@ -35,4 +37,5 @@
 		<tbody>			
 		</tbody>
 	</table>
+</div>
 </div>

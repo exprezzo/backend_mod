@@ -1,5 +1,6 @@
 <?php
-require_once $APPS_PATH.$_PETICION->modulo.'/modelos/user_model.php';
+$modulo='backend';
+require_once $APPS_PATH.$modulo.'/modelos/user_model.php';
 class User extends Controlador{
 	var $validarCaptcha=true;
 	
@@ -9,7 +10,8 @@ class User extends Controlador{
 		$model=$this->getModel();
 		$model->logout();
 		// ob_end_clean();
-		header ('Location: /');
+		global $APP_PATH;
+		header ('Location: '.$APP_PATH);
 	}
 	
 	
@@ -55,10 +57,11 @@ class User extends Controlador{
 	*/
 		
 	function login($username=null, $pass=null){		
-		global $_LOGIN_REDIRECT_PATH;
+		global $_LOGIN_REDIRECT_PATH,$_APP_PATH;
 		if (  isset($_SESSION['isLoged']) && $_SESSION['isLoged']===true ){			
 			// echo 'asd'.$_LOGIN_REDIRECT_PATH;
-			header('Location: '.$_LOGIN_REDIRECT_PATH);					
+			
+			header('Location: '.$_APP_PATH.$_LOGIN_REDIRECT_PATH);					
 		}
 		
 		if ($_SERVER['REQUEST_METHOD']!='POST'){
@@ -103,7 +106,7 @@ class User extends Controlador{
 		
 		if ($resp['success']==true){
 			
-			header('Location: '.$_LOGIN_REDIRECT_PATH); // 
+			header('Location: '.$_APP_PATH.$_LOGIN_REDIRECT_PATH); // 
 			exit;
 		}else{
 			

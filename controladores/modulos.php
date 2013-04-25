@@ -1,8 +1,10 @@
 <?php
-require_once $APPS_PATH.$_PETICION->modulo.'/modelos/modulo_modelo.php';
+require_once $APPS_PATH.$_PETICION->modulo.'/modelos/Modulo_modelo.php';
 class modulos extends Controlador{
 	var $modelo="Modulo";
 	var $campos=array('id','nombre','icono','nombre_interno','ruta_base','orden');
+	var $pk="id";
+	var $nombre="modulos";
 	
 	function nuevo(){		
 		$campos=$this->campos;

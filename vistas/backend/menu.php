@@ -81,7 +81,7 @@
 		
 		echo '<div id="menuTabs-tabs-'.$tabId.'"> <ul>';
 		foreach($mod['catalogos'] as $cat){			
-			echo '<li class="menu_item"><a  controlador="'.$cat['controlador'].'"  tablink="true" href="/'.$mod['nombre_interno'].'/'.$cat['controlador'].'/busqueda">'.
+			echo '<li class="menu_item"><a  controlador="'.$cat['controlador'].'"  tablink="true" href="'.$_APP_PATH.$mod['nombre_interno'].'/'.$cat['controlador'].'/busqueda">'.
 			'<img class="menu_ico" src="'.$cat['icono'].'" />'.
 			'<label>'.$cat['nombre'].'</label></a></li>';
 		}
