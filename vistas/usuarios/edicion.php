@@ -20,6 +20,9 @@
 		};				
 		 var editor=new Edicionusuarios();
 		 editor.init(config);		
+		 
+		 $('[type="password"]').wijtextbox();
+		 $('#'+config.tab.id + ' [name="rol"]').wijcombobox();
 	});
 </script>
 
@@ -35,30 +38,35 @@
 		<form class="frmEdicion" style="padding-top:10px;">							
 			<input type="hidden" name="id" class="txt_id" value="<?php echo $this->datos['id']; ?>" style="width:500px;" />
 		<div class="inputBox" style="margin-bottom:8px;display:block;margin-left:10px;width:100%;" autoFocus >
-			<label style="">Nick:</label>
+			<label style="">Usuario:</label>
 			<input type="text" name="nick" class="txt_nick" value="<?php echo $this->datos['nick']; ?>" style="width:500px;" />
-		</div><div class="inputBox" style="margin-bottom:8px;display:block;margin-left:10px;width:100%;" autoFocus >
-			<label style="">Pass:</label>
+		</div>
+		<div class="inputBox" style="margin-bottom:8px;display:block;margin-left:10px;width:100%;" autoFocus >
+			<label style="">Contrase&ntilde;a:</label>
 			<input type="password" name="pass" class="txt_pass" value="<?php echo $this->datos['pass']; ?>" style="width:500px;" />
-		</div><div class="inputBox" style="margin-bottom:8px;display:block;margin-left:10px;width:100%;" autoFocus >
+		</div>
+		<div class="inputBox" style="margin-bottom:8px;display:block;margin-left:10px;width:100%;" autoFocus >
+			<label style="">Nombre:</label>
+			<input type="text" name="name" class="txt_name" value="<?php echo $this->datos['name']; ?>" style="width:500px;" />
+		</div>
+		<div class="inputBox" style="margin-bottom:8px;display:block;margin-left:10px;width:100%;" autoFocus >
 			<label style="">Email:</label>
 			<input type="text" name="email" class="txt_email" value="<?php echo $this->datos['email']; ?>" style="width:500px;" />
-		</div><div class="inputBox" style="margin-bottom:8px;display:block;margin-left:10px;width:100%;" autoFocus >
-			<label style="">Rol:</label>
-			<input type="text" name="rol" class="txt_rol" value="<?php echo $this->datos['rol']; ?>" style="width:500px;" />
-		</div><div class="inputBox" style="margin-bottom:8px;display:block;margin-left:10px;width:100%;" autoFocus >
-			<label style="">Fbid:</label>
-			<input type="text" name="fbid" class="txt_fbid" value="<?php echo $this->datos['fbid']; ?>" style="width:500px;" />
-		</div><div class="inputBox" style="margin-bottom:8px;display:block;margin-left:10px;width:100%;" autoFocus >
-			<label style="">Name:</label>
-			<input type="text" name="name" class="txt_name" value="<?php echo $this->datos['name']; ?>" style="width:500px;" />
-		</div><div class="inputBox" style="margin-bottom:8px;display:block;margin-left:10px;width:100%;" autoFocus >
-			<label style="">Picture:</label>
-			<input type="text" name="picture" class="txt_picture" value="<?php echo $this->datos['picture']; ?>" style="width:500px;" />
-		</div><div class="inputBox" style="margin-bottom:8px;display:block;margin-left:10px;width:100%;" autoFocus >
-			<label style="">Originalname:</label>
-			<input type="text" name="originalName" class="txt_originalName" value="<?php echo $this->datos['originalName']; ?>" style="width:500px;" />
 		</div>
+		<div class="inputBox" style="margin-bottom:8px;display:block;margin-left:10px;width:100%;"  >
+			<label style="">Rol:</label>
+			<select name="rol" class="txt_rol">
+				<?php
+					$rolId = $this->datos['rol'];						
+					foreach($this->roles as $rol){
+						if ( $rol['id'] == $rolId ) $selected='selected';
+						echo '<option '.$selected.' value="'.$rol['id'].'">'.$rol['rol'].'</option>';
+						$selected='';
+					}
+				?>
+			</select>
+		</div>
+				
 		</form>
 	</div>
 </div>

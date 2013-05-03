@@ -1,5 +1,6 @@
 <?php
 require_once $APPS_PATH.$_PETICION->modulo.'/modelos/usuario_modelo.php';
+require_once $APPS_PATH.$_PETICION->modulo.'/modelos/rol_modelo.php';
 class usuarios extends Controlador{
 	var $modelo="Usuario";
 	var $campos=array('id','nick','pass','email','rol','fbid','name','picture','originalName');
@@ -20,6 +21,10 @@ class usuarios extends Controlador{
 			$obj[$campos[$i]]='';
 		}
 		$vista->datos=$obj;		
+		
+		$rolMod = new rolModelo();
+		$res = $rolMod->buscar( array() );				
+		$vista->roles=$res['datos'];
 		
 		global $_PETICION;
 		$vista->mostrar('/'.$_PETICION->controlador.'/edicion');
@@ -45,6 +50,10 @@ class usuarios extends Controlador{
 		$obj['pass']='';
 		$vista=$this->getVista();				
 		$vista->datos=$obj;		
+		
+		$rolMod = new rolModelo();
+		$res = $rolMod->buscar( array() );				
+		$vista->roles=$res['datos'];
 		
 		global $_PETICION;
 		$vista->mostrar('/'.$_PETICION->controlador.'/edicion');
