@@ -17,7 +17,7 @@
 	<ul>
 		 <li><a href="#<?php echo $domId; ?>">Basic Toolbar</a></li>
 	</ul>
-	<div id="<?php echo $domId; ?>" class="tbPedido">
+	<div id="<?php echo $domId; ?>" class="">
 		<div style="vertical-align:top;"> 
 			<div  style="display:inline-block;">
 				<div title="Acciones" class="wijmo-wijribbon-dropdownbutton">					

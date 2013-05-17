@@ -1,3 +1,4 @@
+
 <div class="toolbarEdicion MaestroDetalle">		
 	<div style="text-align:center;" class="boton btnGuardar " >
 		<div class="iconWrap">		
@@ -33,9 +34,9 @@
 		</div>		
 	</div>			
 	
-	<div style="text-align:center;" class="boton btnAgregar">
+	<div style="text-align:center;" class="boton btnAgregar" >
 		<div class="iconWrap">		
-			<div class="icon"></div>
+			<div class="icon" style="background-image:url(http://png.findicons.com/files/icons/2226/matte_basic/16/list2_add.png);"></div>
 		</div>
 		<div>
 			<span>Agregar</span>

@@ -95,11 +95,11 @@
 	}
 	this.actualizarTitulo=function(){
 		var tabId = this.tabId;		
-		var id = $(tabId + ' .txtId').val();		
+		var id = $(this.tabId + ' [name="'+this.configuracion.pk+'"]').val();
 		if (id>0){
-			
+			$('a[href="'+tabId+'"]').html(this.configuracion.catalogo +':'+id);
 		}else{
-			// $('a[href="'+tabId+'"]').html('Nuevo');
+			$('a[href="'+tabId+'"]').html('Nuevo');
 		}
 	}
 	this.nuevo=function(){
@@ -194,7 +194,7 @@
 		});
 	};	
 	this.eliminar=function(){
-		var id = $('[name="'+this.configuracion.pk+'"]').val();
+		var id = $(this.tabId + ' [name="'+this.configuracion.pk+'"]').val();
 		var me=this;
 		
 		var params={};
