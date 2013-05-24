@@ -2,7 +2,7 @@
 function crear_buscador($params){
 	$nombreControlador =$params['controlador'];
 	$nombreModelo=$params['modelo'];
-	
+	 // print_r($params); exit;
 	global $_PETICION;
 	$ruta='../'.$params['ruta_base'].$params['modulo'].'/vistas/'.$nombreControlador.'/';	
 	
@@ -27,7 +27,7 @@ $contenido='
 				nombre:\'<?php echo $_PETICION->modulo; ?>\'
 			},
 			catalogo:{
-				nombre:\''. $nombreModelo.'\'
+				nombre:\''. $params['catalogo'].'\'
 
 			},			
 			pk:"'.$params['pk_tabla'].'"

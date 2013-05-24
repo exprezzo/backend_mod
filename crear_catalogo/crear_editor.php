@@ -38,7 +38,8 @@ $contenido='
 				nombre:\'<?php echo $_PETICION->modulo; ?>\'
 			},
 			catalogo:{
-				nombre:\''. $nombreModelo.'\'
+				nombre:\''. $params['catalogo'].'\',
+				modelo:\''. ucfirst( $params['modelo'] ).'\'
 			},			
 			pk:"'.$params['pk_tabla'].'"
 			

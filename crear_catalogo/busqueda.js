@@ -50,7 +50,7 @@
 	}
 	this.borrar=function(){
 		if (this.selected==undefined) return false;
-		var r=confirm("�Eliminar Elemento?");
+		var r=confirm("¿Eliminar Elemento?");
 		if (r==true){
 		  this.eliminar();
 		}
@@ -77,6 +77,7 @@
 		var jTab=$('a[href="'+tabId+'"]');		//// this.agregarClase('busqueda_'+this.controlador.nombre);
 	    jTab.html(this.catalogo.nombre);		 
 		 jTab.addClass('busqueda_'+this.controlador.nombre); 
+		 this.agregarClase('tab_'+this.controlador.nombre);
 		//-------------------------------------------
 		$('div'+tabId).css('padding','0px 0 0 0');
 		$('div'+tabId).css('margin-top','0px');
@@ -102,7 +103,7 @@
 					break;
 					case 'eliminar':
 						if (me.selected==undefined) return false;
-						var r=confirm("?liminar?");
+						var r=confirm("¿Eliminar?");
 						if (r==true){
 						  me.eliminar();
 						}
@@ -167,6 +168,7 @@
 			pageSize:pageSize,
 			selectionMode:'singleRow',
 			data:dataSource,
+			showFilter:true,
 			columns: [ 
 			    // { dataKey: "id", hidden:true, visible:true, headerText: "ID" }						
 				//{FIELDS}

@@ -36,35 +36,26 @@ class catalogos extends Controlador{
 	}
 	
 	function crear_catalogo( $params ){
-	
+				
 		$ruta_base='..'.$params['ruta_base'];
-		$modulo = $params['modulo']; 
-		$controlador = $params['controlador'];
-		$modelo = $params['modelo']; 
+		$modulo = $params['modulo']; 		
 		$tabla = $params['tabla']; 
-	
+		// print_r( $params ); exit;
 		$directorio =$ruta_base;
 
 		if ( !file_exists($directorio)) {						
 			mkdir($directorio);
 		}
 		
-		$directorio =$ruta_base.$modulo;
+		$directorio =$ruta_base.$modulo;				
 		
-		// $params['rutaBase']=$params['ruta_base'].$params['modulo'];
-		
-		if ( !file_exists($directorio)) {						
-			// return array(
-				// 'success'=>false,
-				// 'msg'=>'El modulo no ha sido creado'
-			// );
+		if ( !file_exists($directorio)) {									
 			mkdir($directorio);
 			mkdir($directorio.'/controladores');
 			mkdir($directorio.'/modelos');
 			mkdir($directorio.'/vistas');
 		}		
-			
-		// echo 'crear catalogo, controlador: '.$controlador.' tabla: '.$tabla.'<br/> ';
+					
 		$sql="SHOW COLUMNS FROM $tabla";
 		$mod=$this->getModel();
 		$res=$mod->ejecutarSql($sql);
@@ -72,8 +63,7 @@ class catalogos extends Controlador{
 		$fields=array();
 		foreach($res['datos'] as $key=>$value ){		
 			$fields[]=$value['Field'];
-		}
-		// print_r($fields);
+		}		
 		//en la carpeta controladores crea el controlador
 		ob_start();
 		
@@ -116,7 +106,8 @@ class catalogos extends Controlador{
 			'tabla'=>$_REQUEST['datos']['tabla'],
 			'modulo'=>$moduloObj['nombre_interno'],			
 			'ruta_base'=>$moduloObj['ruta_base'],
-			'pk_tabla'=>$_REQUEST['datos']['pk_tabla']
+			'pk_tabla'=>$_REQUEST['datos']['pk_tabla'],
+			'catalogo'=>$_REQUEST['datos']['nombre']
 		);
 		
 		// print_r( $res ); exit;
