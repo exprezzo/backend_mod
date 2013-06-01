@@ -50,6 +50,7 @@ $contenido='
 </script>
 
 	<div class="pnlIzq">
+		<div style="" class="cerrar_tab"></div>
 		<?php 	
 			global $_PETICION;
 			$this->mostrar(\'/backend/componentes/toolbar\');	
