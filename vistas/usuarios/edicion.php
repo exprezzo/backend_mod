@@ -22,7 +22,11 @@
 		 editor.init(config);		
 		 
 		 $('[type="password"]').wijtextbox();
-		 $('#'+config.tab.id + ' [name="rol"]').wijcombobox();
+		 $('#'+config.tab.id + ' [name="rol"]').wijcombobox({
+			select:function(){				
+				editor.editado=true;
+			}
+		 });
 	});
 </script>
 

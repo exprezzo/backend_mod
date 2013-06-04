@@ -63,7 +63,7 @@
 				$(this).removeClass("ui-state-hover");			
 		});
 		
-		 // tab.data('tabObj',this); //Este para que?		
+		  tab.data('tabObj',this); //Este para que?		
 	};
 	//esta funcion pasara al plugin
 	//agrega una clase al panel del contenido y a la pestaña relacionada.
