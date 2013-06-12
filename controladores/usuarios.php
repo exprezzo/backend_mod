@@ -32,7 +32,7 @@ class usuarios extends Controlador{
 		
 	}
 	
-	function guardar(){		
+	function guardar(){				
 		return parent::guardar();
 	}
 	function borrar(){

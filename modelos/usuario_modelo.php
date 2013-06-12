@@ -14,6 +14,13 @@ class UsuarioModelo extends Modelo{
 	}
 	
 	function borrar($params){
+		if ( !($_SESSION['userInfo']['rol']==1 || $_SESSION['userInfo']['rol']==2) ){
+			$res=array(
+				'success'=>false,
+				'msg'=>'no tiene privilegios para borrar usuarios'
+			);
+			echo json_encode($res); exit;
+		}
 		return parent::borrar($params);
 	}
 	function editar($params){
@@ -25,12 +32,21 @@ class UsuarioModelo extends Modelo{
 	
 	function guardar( $params ){
 		global $DB_CONFIG;
+		
 		$_PASS_AES = $DB_CONFIG['PASS_AES'];
 		$dbh=$this->getConexion();
 		
 		$id=$params['id'];
-		// $nombre=$params['nombre'];		
+		
 		if ( empty($id) ){
+			//Solo el developer y el admin pueden crear usuarios
+			if ( !($_SESSION['userInfo']['rol']==1 || $_SESSION['userInfo']['rol']==2) ){
+				$res=array(
+					'success'=>false,
+					'msg'=>'no tiene privilegios para crear usuarios'
+				);
+				echo json_encode($res); exit;
+			}
 			//           CREAR
 			// $sql='INSERT INTO '.$this->tabla.' SET nombre=:nombre, fecha_de_creacion= now()';
 			$sql='INSERT INTO '.$this->tabla.' SET ';
@@ -56,8 +72,17 @@ class UsuarioModelo extends Modelo{
 			$msg=$this->nombre.' Creado';	
 		}else{
 			//	         ACTUALIZAR
-			// $sql='UPDATE '.$this->tabla.' SET nombre=:nombre WHERE id=:id, fecha_de_actualizacion=now()';
-			// $sql='UPDATE '.$this->tabla.' SET nombre=:nombre WHERE id=:id';
+			if ( !($_SESSION['userInfo']['rol']==1 || $_SESSION['userInfo']['rol']==2) ){
+				unset($params['rol']);
+				// print_r();
+				if ( $params['id'] != $_SESSION['userInfo']['id'] ){
+					$res=array(
+						'success'=>false,
+						'msg'=>'no tiene privilegios para editar usuarios'
+					);
+					echo json_encode($res); exit;
+				}
+			}
 			$sql='UPDATE '.$this->tabla.' SET ';
 			foreach($params as $key=>$val){
 				if ($key==$this->pk ) continue;
